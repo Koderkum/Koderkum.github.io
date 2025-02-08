@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Wallah Courses - 10% Discount | KUMHAR0001</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #FF6B00;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1580927752452-89d86da3fa0a') center/cover;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .coupon-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .coupon-code {
+            background-color: #FFD700;
+            color: #333;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .copy-button {
+            background-color: #FF6B00;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        .copy-button:hover {
+            background-color: #E55B00;
+        }
+
+        .copied-message {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: none;
+            animation: fadeOut 2s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {opacity: 1;}
+            90% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .course-card h3 {
+            color: #FF6B00;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background-color: #FF6B00;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #E55B00;
+        }
+
+        .features {
+            padding: 2rem;
+            background-color: white;
+            margin: 2rem;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .courses-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .coupon-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Get 10% Off Physics Wallah Courses</h1>
+    </div>
+
+    <section class="hero">
+        <h2>Use Exclusive Coupon Code</h2>
+        <div class="coupon-section">
+            <div class="coupon-code" onclick="copyCoupon()" id="couponCode">
+                KUMHAR0001
+                <div class="copied-message" id="copiedMessage">Copied!</div>
+            </div>
+            <button class="copy-button" onclick="copyCoupon()">Copy Code</button>
+        </div>
+        <p>Valid for first 100 students - 10% Discount on All Courses!</p>
+        <button class="cta-button" onclick="window.location.href='YOUR_AFFILIATE_LINK'">Explore Courses</button>
+    </section>
+
+    <div class="features">
+        <h2>Why Physics Wallah?</h2>
+        <ul>
+            <li>✅ Expert Faculty</li>
+            <li>✅ Comprehensive Study Material</li>
+            <li>✅ Regular Mock Tests</li>
+            <li>✅ 10% Instant Discount</li>
+            <li>✅ Affordable Pricing</li>
+        </ul>
+    </div>
+
+    <div class="courses-container">
+        <div class="course-card">
+            <h3>NEET Preparation</h3>
+            <p>Complete NEET 2024 preparation course</p>
+            <button class="cta-button" onclick="window.location.href='YOUR_NEET_LINK'">Get 10% Off</button>
+        </div>
+
+        <div class="course-card">
+            <h3>JEE Main & Advanced</h3>
+            <p>Dual preparation package for JEE</p>
+            <button class="cta-button" onclick="window.location.href='YOUR_JEE_LINK'">Get 10% Off</button>
+        </div>
+
+        <div class="course-card">
+            <h3>Class 12 Board + Competitive</h3>
+            <p>Combined course for board and entrance exams</p>
+            <button class="cta-button" onclick="window.location.href='YOUR_BOARD_LINK'">Get 10% Off</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 Physics Wallah Promotions</p>
+        <p>Disclaimer: This is an independent promotion website not affiliated with Physics Wallah</p>
+    </footer>
+
+    <script>
+        function copyCoupon() {
+            const couponCode = document.getElementById('couponCode');
+            const copiedMessage = document.getElementById('copiedMessage');
+            
+            navigator.clipboard.writeText('KUMHAR0001')
+                .then(() => {
+                    copiedMessage.style.display = 'block';
+                    setTimeout(() => {
+                        copiedMessage.style.display = 'none';
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy coupon code:', err);
+                });
+        }
+    </script>
+</body>
+</html>
